@@ -1,7 +1,22 @@
 # b36date
 
-Prints a date as a compact four-character code: a two-digit year, then the
-month and the day as single base36 digits (`0-9`, then `A-Z`).
+Agents run amok making branches, in worktrees, in clones, everywhere. To create a consistent workflow, I created a small date format called b36date using base36.
+
+It's a four digit scheme YYMD where M and D are the values in base 36. The resulting dates are human readable, sortable, and easily visible in git branches.
+
+Base 36 uses digits 0-9 and capitalized alphas A-Z; zero and letters W-Z are unused.
+
+The year is `year % 100`, so 1926 and 2026 both give `26`. Months run `1`–`C`
+and days `1`–`V`.
+
+Thanksgiving 2026 is `26BQ`.
+
+`26` = 2026
+
+`B` = November (11=B)
+
+`Q` = 26
+
 
 | Date       | Code   |
 |------------|--------|
@@ -9,8 +24,19 @@ month and the day as single base36 digits (`0-9`, then `A-Z`).
 | 2026-01-01 | `2611` |
 | 1999-12-31 | `99CV` |
 
-The year is `year % 100`, so 1926 and 2026 both give `26`. Months run `1`–`C`
-and days `1`–`V`.
+
+Your git branches then become:
+
+`26BQ-feature-description-dashed`
+
+`26BQ-fix-broken-link`
+
+`26BQ-staged`
+
+First teach your agents about the format and add it to PATH. Then you can then tell your agents to "push today's b36date branches" and "merge today's b36date branches into a xxxx-staging branch where xxxx is todays b36date."
+
+It's easy for them to spot all accumulated branches and easily delete them at the end of the day.
+
 
 ## Install
 
