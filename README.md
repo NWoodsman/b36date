@@ -18,6 +18,16 @@ and days `1`–`V`.
 go install github.com/NWoodsman/b36date@latest
 ```
 
+Or with Nix:
+
+```sh
+$ nix run github:NWoodsman/b36date -- 2026-11-26
+26BQ
+```
+
+Leave off `-- <date>` to get today's code, or use
+`nix shell github:NWoodsman/b36date` to put `b36date` on your PATH.
+
 ## Usage
 
 With no arguments it prints today's date:
