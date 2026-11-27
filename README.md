@@ -58,3 +58,7 @@ These input formats are accepted:
 
 If a date can't be read, b36date prints an error to stderr and exits with
 status 1.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
